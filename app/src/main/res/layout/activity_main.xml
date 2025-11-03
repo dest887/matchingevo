@@ -143,4 +143,12 @@
         android:text="new">
 
     </Button>
+
+    <Button
+        android:id="@+id/score"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="score">
+
+    </Button>
 </androidx.appcompat.widget.LinearLayoutCompat>
