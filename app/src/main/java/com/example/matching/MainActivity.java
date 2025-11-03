@@ -63,6 +63,8 @@ public class MainActivity extends AppCompatActivity {
             counter=0;
             progress.setText(counter+"/6");
             digits+=1;
+            countb=0;
+
 
             nu1.setText(String.valueOf(n1));
             nu2.setText(String.valueOf(n2));
