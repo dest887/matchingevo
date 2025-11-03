@@ -10,7 +10,7 @@ import android.widget.TextView;
 import androidx.appcompat.app.AppCompatActivity;
 
 public class MainActivity extends AppCompatActivity {
-    public static int digits=0,counterall=0;
+    public static int digits=0,counterall=0,countb=0;
 
     private int n1, n2, n3, n4, n5, n6, n7,counter=0;
     private TextView nu1, nu2, nu3, nu4, nu5, nu6, nu7, progress;
@@ -62,7 +62,7 @@ public class MainActivity extends AppCompatActivity {
             n6 = (int) (Math.random() * 40);
             counter=0;
             progress.setText(counter+"/6");
-            digits+=6;
+            digits+=1;
 
             nu1.setText(String.valueOf(n1));
             nu2.setText(String.valueOf(n2));
@@ -72,13 +72,17 @@ public class MainActivity extends AppCompatActivity {
             nu6.setText(String.valueOf(n6));
         });
 
-        b1.setOnClickListener(v -> {
-            running = true;
-            handler.post(updateNu7);
-        });
+            b1.setOnClickListener(v -> {
+                if(countb<6){
+
+                running = true;
+                handler.post(updateNu7);
+            }});
+
 
         b2.setOnClickListener(v -> {
             running = false;
+            countb++;
             n7= Integer.parseInt(nu7.getText().toString());
             if(n7==n1){
                 counter++;
