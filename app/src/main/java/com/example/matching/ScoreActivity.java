@@ -4,6 +4,7 @@ import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
+import android.widget.EditText;
 import android.widget.TextView;
 
 import androidx.activity.EdgeToEdge;
@@ -16,6 +17,7 @@ public class ScoreActivity extends AppCompatActivity {
     private Button back;
     private TextView noc,nog;
     private Intent backi;
+    private TextView namen;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -25,8 +27,11 @@ public class ScoreActivity extends AppCompatActivity {
         back=findViewById(R.id.back);
         noc=findViewById(R.id.noc);
         nog=findViewById(R.id.nog);
-        noc.setText(MainActivity.digits+"");
-        nog.setText(MainActivity.counterall+"");
+        String receivedValue = getIntent().getStringExtra("playerName");
+        namen=findViewById(R.id.nemo);
+        namen.setText(receivedValue+"");
+        noc.setText(MainActivity.digits+"games");
+        nog.setText(MainActivity.counterall+"correct");
         backi=new Intent(ScoreActivity.this,MainActivity.class);
         back.setOnClickListener(new View.OnClickListener() {
             @Override

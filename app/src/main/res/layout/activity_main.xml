@@ -87,40 +87,39 @@
 
     </LinearLayout>
 
+
+    <EditText
+        android:id="@+id/editn"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center"
+        android:layout_marginTop="50dp"
+        android:hint="Enter YN"
+
+
+        android:textSize="30dp">
+
+    </EditText>
+
     <TextView
         android:id="@+id/num7"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_gravity="center"
-        android:layout_marginTop="150dp"
+        android:layout_marginTop="60dp"
         android:text="X"
         android:textSize="90dp">
 
     </TextView>
 
-    <LinearLayout
+
+    <Button
+        android:id="@+id/toggleButton"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:orientation="horizontal">
+        android:text="start">
 
-        <Button
-            android:id="@+id/b1"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_weight="1"
-            android:text="start">
-
-        </Button>
-
-        <Button
-            android:id="@+id/b4"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_weight="1"
-            android:text="stop">
-
-        </Button>
-    </LinearLayout>
+    </Button>
 
 
     <TextView
