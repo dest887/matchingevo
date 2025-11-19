@@ -37,9 +37,10 @@ public class ScoreActivity extends AppCompatActivity {
             @Override
             public void onClick(View view) {
                 startActivity(backi);
+                finish();
+                System.exit(0);
             }
         });
-
 
         };
     }

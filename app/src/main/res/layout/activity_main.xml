@@ -143,11 +143,27 @@
 
     </Button>
 
-    <Button
-        android:id="@+id/score"
+    <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:text="score">
+        >
+        <Button
+            android:id="@+id/score"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="score"
+            android:layout_weight="1">
 
-    </Button>
+        </Button>
+
+        <Button
+            android:id="@+id/exitt"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:text="EXIT">
+
+        </Button>
+    </LinearLayout>
+
 </androidx.appcompat.widget.LinearLayoutCompat>

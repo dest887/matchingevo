@@ -1,4 +1,6 @@
 package com.example.matching;
+import android.app.Dialog;
+import android.content.DialogInterface;
 import android.graphics.Color;
 import android.content.Intent;
 import android.os.Bundle;
@@ -8,6 +10,7 @@ import android.widget.Button;
 import android.widget.EditText;
 import android.widget.TextView;
 
+import androidx.appcompat.app.AlertDialog;
 import androidx.appcompat.app.AppCompatActivity;
 
 import android.graphics.Color;import android.graphics.Color;
@@ -19,7 +22,7 @@ public class MainActivity extends AppCompatActivity {
 
     private int n1, n2, n3, n4, n5, n6, n7,counter=0;
     private TextView nu1, nu2, nu3, nu4, nu5, nu6, nu7, progress;
-    private Button newc, toggleButton,score;
+    private Button newc, toggleButton,score,exit2;
 
     private boolean running = false;
     private Intent scorei;
@@ -42,9 +45,28 @@ public class MainActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
         toggleButton=findViewById(R.id.toggleButton);
+        AlertDialog.Builder alertdialog = new AlertDialog.Builder(this);
+        alertdialog.setTitle("Alert");
+        alertdialog.setMessage("alert if you want to exit");
+        alertdialog.setIcon(R.drawable.ic_launcher_background);
+        alertdialog.setCancelable(true);
+        alertdialog.setPositiveButton("Yes", new DialogInterface.OnClickListener() {
+            @Override
+            public void onClick(DialogInterface dialogInterface, int i) {
+                finish();
+                System.exit(0);
+            }
+        });
+        alertdialog.setNegativeButton("No", new DialogInterface.OnClickListener() {
+            @Override
+            public void onClick(DialogInterface dialogInterface, int i) {
+                dialogInterface.dismiss();
+            }
+        });
         editn=findViewById(R.id.editn);
         score=findViewById(R.id.score);
         nu1 = findViewById(R.id.num1);
+        exit2=findViewById(R.id.exitt);
         nu2 = findViewById(R.id.num2);
         nu3 = findViewById(R.id.num3);
         nu4 = findViewById(R.id.num4);
@@ -161,6 +183,15 @@ public class MainActivity extends AppCompatActivity {
                 name = editn.getText().toString();
                 scorei.putExtra("playerName", name);
                 startActivity(scorei);
+                finish();
+                System.exit(0);
+            }
+        });
+        exit2.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                AlertDialog dialog=alertdialog.create();
+                dialog.show();
             }
         });
 
