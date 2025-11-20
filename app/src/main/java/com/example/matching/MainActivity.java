@@ -22,7 +22,7 @@ public class MainActivity extends AppCompatActivity {
 
     private int n1, n2, n3, n4, n5, n6, n7,counter=0;
     private TextView nu1, nu2, nu3, nu4, nu5, nu6, nu7, progress;
-    private Button newc, toggleButton,score,exit2;
+    private Button newc, toggleButton,score,exit2,btnok,btnno;
 
     private boolean running = false;
     private Intent scorei;
@@ -63,6 +63,7 @@ public class MainActivity extends AppCompatActivity {
                 dialogInterface.dismiss();
             }
         });
+
         editn=findViewById(R.id.editn);
         score=findViewById(R.id.score);
         nu1 = findViewById(R.id.num1);
@@ -107,6 +108,23 @@ public class MainActivity extends AppCompatActivity {
             nu1.setBackgroundColor(Color.parseColor("#FFFFFF"));
 
 
+        });
+        Dialog d=new Dialog(this);
+        d.setContentView(R.layout.mydialog);
+        btnok=d.findViewById(R.id.btyes);
+        btnno=d.findViewById(R.id.btno);
+        btnok.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                finish();
+                System.exit(0);
+            }
+        });
+        btnno.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                d.dismiss();
+            }
         });
 
         toggleButton.setOnClickListener(v -> {
@@ -184,20 +202,19 @@ public class MainActivity extends AppCompatActivity {
                 scorei.putExtra("playerName", name);
                 startActivity(scorei);
                 finish();
-                System.exit(0);
             }
         });
         exit2.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
                 AlertDialog dialog=alertdialog.create();
-                dialog.show();
+                d.show();
             }
         });
 
     }
-}
 
+}
 
 
 
