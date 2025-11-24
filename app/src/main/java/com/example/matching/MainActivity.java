@@ -118,9 +118,13 @@ public class MainActivity extends AppCompatActivity {
                 name3=insert4.getText().toString();
                 insert2=d2.findViewById(R.id.insert1);
                 name2=insert2.getText().toString();
+                if(insert2.getText().toString().isEmpty()||insert4.getText().toString().isEmpty()){
+                    d2.show();
+                }
+                else{
                 editn.setText(name2+" "+name3);
-                d2.dismiss();
-            }
+                d2.dismiss();}}
+
         });
         d2.show();
 
