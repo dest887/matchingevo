@@ -217,6 +217,7 @@ public class MainActivity extends AppCompatActivity {
         score.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
+                editn.setText(name2);
                 name = editn.getText().toString();
                 scorei.putExtra("playerName", name);
                 startActivity(scorei);
