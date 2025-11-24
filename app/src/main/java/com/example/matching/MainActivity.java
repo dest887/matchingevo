@@ -16,9 +16,9 @@ import androidx.appcompat.app.AppCompatActivity;
 import android.graphics.Color;import android.graphics.Color;
 import android.graphics.Color;
 public class MainActivity extends AppCompatActivity {
-    private String name,name2;
+    private String name,name2,name3;
     public static int digits=0,counterall=0,countb=0;
-    private EditText insert2;
+    private EditText insert2,insert4;
     private int n1, n2, n3, n4, n5, n6, n7,counter=0;
     private TextView nu1, nu2, nu3, nu4, nu5, nu6, nu7, progress,editn;
     private Button newc, toggleButton,score,exit2,btnok,btnno,btok2;
@@ -114,9 +114,11 @@ public class MainActivity extends AppCompatActivity {
         btok2.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
+                insert4=d2.findViewById(R.id.insert3);
+                name3=insert4.getText().toString();
                 insert2=d2.findViewById(R.id.insert1);
                 name2=insert2.getText().toString();
-                editn.setText(name2);
+                editn.setText(name2+" "+name3);
                 d2.dismiss();
             }
         });
