@@ -16,13 +16,12 @@ import androidx.appcompat.app.AppCompatActivity;
 import android.graphics.Color;import android.graphics.Color;
 import android.graphics.Color;
 public class MainActivity extends AppCompatActivity {
-    private String name;
+    private String name,name2;
     public static int digits=0,counterall=0,countb=0;
-    private EditText editn;
-
+    private EditText insert2;
     private int n1, n2, n3, n4, n5, n6, n7,counter=0;
-    private TextView nu1, nu2, nu3, nu4, nu5, nu6, nu7, progress;
-    private Button newc, toggleButton,score,exit2,btnok,btnno;
+    private TextView nu1, nu2, nu3, nu4, nu5, nu6, nu7, progress,editn;
+    private Button newc, toggleButton,score,exit2,btnok,btnno,btok2;
 
     private boolean running = false;
     private Intent scorei;
@@ -109,6 +108,20 @@ public class MainActivity extends AppCompatActivity {
 
 
         });
+        Dialog d2=new Dialog(this);
+        d2.setContentView(R.layout.activity_insertname);
+        btok2=d2.findViewById(R.id.BTOK);
+        btok2.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                insert2=d2.findViewById(R.id.insert1);
+                name2=insert2.getText().toString();
+                editn.setText(name2);
+                d2.dismiss();
+            }
+        });
+        d2.show();
+
         Dialog d=new Dialog(this);
         d.setContentView(R.layout.mydialog);
         btnok=d.findViewById(R.id.btyes);
